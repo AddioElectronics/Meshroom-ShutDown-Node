@@ -52,20 +52,30 @@ class ShutDown(desc.Node):
             group='trigger',
             uid=[3]
         ),
+        desc.FloatParam(
+            name='triggerFloat',
+            label='Trigger (Float)',
+            description='Float that will trigger the shutdown when received. (Value is ignored)',
+            value=0.0,
+            advanced=True,
+            group='trigger',
+            uid=[4],
+            range=None
+        ),
         desc.BoolParam(
             name='isEnabled',
             label='Shutdown Enabled',
             description='Set to True to enable shutdown.',
             value=True,
-            uid=[4]
+            uid=[5]
         ),
         desc.IntParam(
             name='delay',
             label='Delay (seconds)',
             description='Time in seconds before the shutdown.',
-            value=3, 
+            value=30, 
             range=(0, 3600, 1), 
-            uid=[5]
+            uid=[6]
             ),
         desc.ChoiceParam(
             name="verboseLevel",
@@ -74,7 +84,7 @@ class ShutDown(desc.Node):
             values=VERBOSE_LEVEL,
             value="info",
             exclusive=True,
-            uid=[6]
+            uid=[7]
         ),
     ]
     outputs = []
