@@ -1,6 +1,6 @@
 # Meshroom ShutDown Node
 
-A custom node for Meshroom designed to shut down your PC after a specified delay.
+A custom node for Meshroom used to shut down your PC after a specified delay.
 
 ## Installation
 

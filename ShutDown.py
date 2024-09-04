@@ -105,13 +105,13 @@ class ShutDown(desc.Node):
             if isEnabled:           
                 chunk.logger.info(f"Scheduling shutdown in {delay} seconds...")            
                 if system == 'Windows':
-                    #chunk.logger.debug(f"Command: shutdown /s /t {delay}")
+                    chunk.logger.debug(f"Command: shutdown /s /t {delay}")
                     os.system(f'shutdown /s /t {delay}')
                 elif system == 'Linux':
-                    #chunk.logger.debug(f"Command: shutdown -h +{delay//60}")
+                    chunk.logger.debug(f"Command: shutdown -h +{delay//60}")
                     os.system(f'shutdown -h +{delay//60}')  # Delay in minutes on Linux
                 elif system == 'Darwin':  # macOS
-                    #chunk.logger.debug(f"Command: shutdown -h +{delay // 60}")
+                    chunk.logger.debug(f"Command: shutdown -h +{delay // 60}")
                     os.system(f'shutdown -h +{delay // 60}')  # Delay in minutes on macOS
                 else:
                     raise NotImplementedError(f"Shutdown is not implemented for this OS: {system}")
